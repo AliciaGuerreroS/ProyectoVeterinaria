@@ -79,14 +79,21 @@ raza = input("Raza: ")
 nombre_dueño = input("Nombre del dueño: ")
 DNI_dueño = input("DNI del dueño: ")
 
-##forma1
-# numbers= [i for i in range(7,538,10)]
-# print(numbers)
-##forma2
-# def number_with_seven():
-#     for i in range(7,538,10):
-#         print(i)
+#forma1
+numbers= [i for i in range(7,538,10)]
+print(numbers)
+#forma2
+def number_with_seven():
+    for i in range(7,538,10):
+        print(i)
 
-# number_with_seven()
+number_with_seven()
 
 ###hola estoy intentando arreglar la configuracion en github
+
+
+def common_element2(list1,list2):
+    for i in list1:
+        for j in list2:
+            if i == j:
+               print(i)
