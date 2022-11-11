@@ -105,15 +105,3 @@ raza = input("Raza: ")
 nombre_dueño = input("Nombre del dueño: ")
 DNI_dueño = input("DNI del dueño: ")
 
-lista_datos = []
-mascota1 = Mascota(nombre, fecha_nacimiento, raza, nombre_dueño, DNI_dueño )
-__dict__.append(mascota1) 
-for i in __dict__:
-    print(i)
-
-
-print(mascota1.nombre)
-print(mascota1.fecha_nacimiento)
-print(mascota1.raza)
-print(mascota1.nombre_dueño)
-print(mascota1.DNI_dueño)
