@@ -117,4 +117,4 @@ print(mascota1.fecha_nacimiento)
 print(mascota1.raza)
 print(mascota1.nombre_dueño)
 print(mascota1.DNI_dueño)
->>>>>>> origin
+
