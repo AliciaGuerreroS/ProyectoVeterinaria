@@ -88,3 +88,5 @@ DNI_dueño = input("DNI del dueño: ")
 #         print(i)
 
 # number_with_seven()
+
+###hola estoy intentando arreglar la configuracion en github
