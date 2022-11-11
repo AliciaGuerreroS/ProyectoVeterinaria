@@ -36,27 +36,44 @@ Opción 4: Buscar mascota
 Opción 5: Ordenar lista de mascotas
 Opción 6: Guardar mascotas en archivo de disco duro (.txt o csv)""")
 
+while True:
+    while True:
+        try:
 
-opcion = int(input("Ingresa el numero de la opcion: "))
+            opcion = int(input("Ingresa el numero de la opcion: "))
+            #colocar un try en la linea anterior para los errores de typo de datos ingresados y que se vuelva a ingresar
+        except: 
+            print("Por favor ingresa un numero valido")
 
-for i in lista_opciones: #en realidad el for no deberia de ir 
-    if opcion == i and i == 1:
-        print("Opcion 1")
+        else: 
+            break
+        
+    if opcion in lista_opciones:
+        print(f"Opcion {opcion} ")
 
-    elif opcion == i and i == 2:
-        print("Opcion 2")
+        if opcion == 1:
+            print("Opcion 1")
+            break
 
-    elif opcion == i and i == 3:
-        print("Opcion 3") 
+        elif opcion == 2:
+            print("Opcion 2")
+            break
 
-    elif opcion == i and i == 4:
-        print("Opcion 4")
+        elif opcion == 3:
+            print("Opcion 3")
+            break
 
-    elif opcion == i and i == 5:
-        print("Opcion 5")
+        elif opcion == 4:
+            print("Opcion 4")
+            break
 
-    elif opcion == i and i == 6:
-        print("Opcion 6")    
+        elif opcion == 5:
+            print("Opcion 5")
+            break
+
+        else:
+            print("Opcion 6")
+            break
 
     else:
         print("ingrese el numero de la opcion entre 1 y 6 ")
@@ -72,21 +89,32 @@ Este podria ser el resumen de las lineas 42 en adelante
 """""
 
 print("Por favor ingrese los datos de la mascota: ")
+class Mascota:
+    def __init__(self, nombre, fecha_nacimiento, raza, nombre_dueño, DNI_dueño):
+        self.nombre = nombre
+        self.fecha_nacimiento = fecha_nacimiento
+        self.raza = raza
+        self.nombre_dueño = nombre_dueño
+        self.DNI_dueño = DNI_dueño
+
+__dict__ = []
 
 nombre = input("Nombre: ")
-fecha_de_nacimiento = input("Fecha de nacimiento: ")
+fecha_nacimiento = input("Fecha de nacimiento: ")
 raza = input("Raza: ")
 nombre_dueño = input("Nombre del dueño: ")
 DNI_dueño = input("DNI del dueño: ")
 
-##forma1
-# numbers= [i for i in range(7,538,10)]
-# print(numbers)
-##forma2
-# def number_with_seven():
-#     for i in range(7,538,10):
-#         print(i)
+lista_datos = []
+mascota1 = Mascota(nombre, fecha_nacimiento, raza, nombre_dueño, DNI_dueño )
+__dict__.append(mascota1) 
+for i in __dict__:
+    print(i)
 
-# number_with_seven()
 
-###hola estoy intentando arreglar la configuracion en github
+print(mascota1.nombre)
+print(mascota1.fecha_nacimiento)
+print(mascota1.raza)
+print(mascota1.nombre_dueño)
+print(mascota1.DNI_dueño)
+>>>>>>> origin
