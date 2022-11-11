@@ -79,3 +79,12 @@ raza = input("Raza: ")
 nombre_dueño = input("Nombre del dueño: ")
 DNI_dueño = input("DNI del dueño: ")
 
+##forma1
+# numbers= [i for i in range(7,538,10)]
+# print(numbers)
+##forma2
+# def number_with_seven():
+#     for i in range(7,538,10):
+#         print(i)
+
+# number_with_seven()
