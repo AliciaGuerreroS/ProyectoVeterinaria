@@ -54,7 +54,47 @@ for i in lista_opciones: #en realidad el for no deberia de ir
 
     elif opcion == i and i == 5:
         print("Opcion 5")
+        def ordenar_datos(self,doc):
+            with open("MASCOTAS.csv", encoding= 'utf-8') as f:
+                self.doc = csv.reader(f)
+                import pandas as pd
+                df=pd.DataFrame(self.doc)
+                filtrado=df.loc[1:,[0,1,2,3,4]]
+                #lista_subopciones=[0,1,2,3]
+                nombre_subopciones=['nombre de mascota','raza', 'dueño' , 'DNI']
+                print("OPCION 5: Ordenar datos")
+                print("Se puede ordenar de acuerdo a los siguientes campos:")
+                print("1) Ordenar por nombre de mascota")
+                #print("2) Ordenar por Fecha de Nacimiento")
+                print("2) Ordenar por Raza")
+                print("3) Ordenar por Dueño")
+                print("4) Ordenar por DNI dueño")
 
+                while True:
+                    opcion = int(input("Ingresa el numero de la subopcion: "))
+
+                    if opcion == 1:
+                        print("Se ordenara de acuerdo",opcion,":",nombre_subopciones[opcion-1])
+                        print(filtrado.sort_values(by=[opcion-1],ascending=[True]))
+                    if opcion in [2,3,4]:
+                        print("Se ordenara de acuerdo",opcion,":",nombre_subopciones[opcion-1])
+                        print(filtrado.sort_values(by=[opcion],ascending=[True]))
+                    else:
+                        print("Ingresar una opcion valida del 1 al 4")
+
+                    respuesta= input("Desea seguir ordenando datos? si/no: ")
+                    if respuesta == "si":
+                        continue
+                    if respuesta == "no":
+                        print("Fue un gusto servirle")
+                        break
+
+        ### estas son las lineas para ejecucion 
+        mi_archivo= Archivo("MASCOTAS.csv")
+        # mi_archivo.cargar_archivo()
+        #mi_archivo.mostrar_datos("MASCOTAS.csv")
+        mi_archivo.ordenar_datos("MASCOTAS.csv")    
+    
     elif opcion == i and i == 6:
         print("Opcion 6")    
 
