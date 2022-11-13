@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-
+ #Hola
 """
 Veterinaria necesita revisar y registrar datos de una mascota
 
@@ -82,7 +81,6 @@ DNI_dueño = input("DNI del dueño: ")
 
 
 print ("cambio")
-=======
 
 import csv
 from csv import writer
@@ -190,4 +188,3 @@ while True:
     else:
         print("ingrese el numero de la opcion entre 1 y 6 ")
         print("ingrese el numero de la opcion entre 1 y 6 ")
->>>>>>> 1fc779fb12a3df8fd6bd13233e59051995b222f2
