@@ -104,3 +104,4 @@ while True:
 
     else:
         print("ingrese el numero de la opcion entre 1 y 6 ")
+        print("ingrese el numero de la opcion entre 1 y 6 ")
