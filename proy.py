@@ -76,10 +76,10 @@ while True:
     if opcion in lista_opciones:
         print(f"Opcion {opcion} ")
 
-
         if opcion == 1:
             print("Ejecutando opción 1")
-
+            mi_archivo= Archivo("MASCOTAS.csv")
+            mi_archivo.cargar_archivo()
 
         elif opcion == 2:
             print("Ejecutando Opcion 2: MOSTRAR DATOS")
@@ -157,7 +157,6 @@ while True:
             # mi_archivo.cargar_archivo()
             #mi_archivo.mostrar_datos("MASCOTAS.csv")
             mi_archivo.ordenar_datos("MASCOTAS.csv")
-            
 
         else:
             print("Ejecutando Opcion 6")
@@ -168,4 +167,3 @@ while True:
         if respuesta == "no":
             print("Estamos para servirle")
             break
->>>>>>> intento_1
