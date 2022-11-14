@@ -31,6 +31,7 @@ class Mascota:
         Texto5 = f"DNI del dueño: {self.DNI_dueño}"
         return mascotas.append([texto1, texto2, texto3, texto4, Texto5])
 
+    
 
 class Archivo:
     def __init__(self, doc) -> None:
@@ -51,6 +52,7 @@ class Archivo:
             df=pd.DataFrame(self.doc)
             print(df)
 
+    
 
 print("Bienvenidos a la veterinaria")
 print("¿Que accion desea realizar?")
@@ -97,33 +99,93 @@ while True:
         elif opcion == 3:
             print("Ejecutando Opcion 3 ")
             fila= []
-    respuesta = ["si", "no"]
-    while True:
-        nombre= input("Nombre de mascota: ")
-        fecha_nacimiento= input("Fecha de nacimiento, mascota: ")
-        raza = input("Raza: ")
-        nombre_dueño= input("Nombre del dueño: ")
-        dni_dueño= input("DNI del dueño: ")
-        fila.extend([nombre, fecha_nacimiento, raza, nombre_dueño, dni_dueño])
-        print(f"Se han agregado los siguiente datos: {fila}")
+            respuesta = ["si", "no"]
+            while True:
+                nombre= input("Nombre de mascota: ")
+                fecha_nacimiento= input("Fecha de nacimiento, mascota: ")
+                raza = input("Raza: ")
+                nombre_dueño= input("Nombre del dueño: ")
+                dni_dueño= input("DNI del dueño: ")
+                fila.extend([nombre, fecha_nacimiento, raza, nombre_dueño, dni_dueño])
+                print(f"Se han agregado los siguiente datos: {fila}")
 
 
-        guardar= int(input("Quiere guardar los datos ingresados?  Si su respuesta es SI, 6 para SI, 0 para NO: "))
-        if guardar == 6:
-                print("LOS DATOS SE HAN GUARDADO")
-                #Agregar dato:
-                # Pre-requisite - The CSV file should be manually closed before running this code.
-                with open('MASCOTAS.csv', 'a', newline='') as f:
-                    writer_object = writer(f)
-                    writer_object.writerow(fila)
-                    f.close()
-                    break
-        if guardar == 0:
-                print("Gracias por confiar en nosotros")
-                break
+                guardar= int(input("Quiere guardar los datos ingresados?  Si su respuesta es SI, 6 para SI, 0 para NO: "))
+                if guardar == 6:
+                        print("LOS DATOS SE HAN GUARDADO")
+                        #Agregar dato:
+                        # Pre-requisite - The CSV file should be manually closed before running this code.
+                        with open('MASCOTAS.csv', 'a', newline='') as f:
+                            writer_object = writer(f)
+                            writer_object.writerow(fila)
+                            f.close()
+                            break
+                if guardar == 0:
+                        print("Gracias por confiar en nosotros")
+                        break
 
         elif opcion == 4:
             print("Ejecutando Opcion 4")
+            class Archivo:
+                def __init__(self, doc) -> None:
+                    self.doc= doc
+                
+                def cargar_archivo(self):
+                    with open("MASCOTAS.csv", encoding= 'utf-8') as f:
+                        self.doc = csv.reader(f)
+                        print(f"Se cargaron los datos de 5 mascotas")
+
+
+                def mostrar_datos(self, doc):
+                    with open("MASCOTAS.csv", encoding= 'utf-8') as f:
+                        self.doc = csv.reader(f)
+                        #print(self.doc)
+                        import pandas as pd
+                        df=pd.DataFrame(self.doc)
+                        print(df)
+
+                        """for linea in self.doc:
+                            print(linea)"""
+
+                def buscar_datos(self, doc):
+                    with open("MASCOTAS.csv", encoding= 'utf-8') as f:
+                            self.doc = csv.reader(f)
+                            import pandas as pd
+                            df=pd.DataFrame(self.doc)
+                            nombre_subopciones=['nombre de mascota','raza', 'dueño' , 'DNI']
+                            print("OPCION 4: Buscar datos")
+                            print("Se puede buscar de acuerdo a los siguientes campos:")
+                            print("1) Buscar por nombre de mascota")
+                            #print("2) Ordenar por Fecha de Nacimiento")
+                            print("2) Buscar por Raza")
+                            print("3) Buscar por Dueño")
+                            print("4) Busar por DNI dueño")             
+
+                            while True:
+                                opcion = int(input("Ingresa el numero de la subopcion: "))
+                                C= input("Ingrese el dato: ")
+                                #cadena= input("Ingresar los datos de acuerdo a la subopcion: ")
+                                if opcion == 1:
+                                    print("Se buscara de acuerdo",opcion,":",nombre_subopciones[opcion-1])
+                                    print(df[df[opcion-1].isin([C])])
+                                elif opcion in [2,3,4]:
+                                    print("Se buscara de acuerdo",opcion,":",nombre_subopciones[opcion-1])
+                                    print(df[df[opcion].isin([C])])
+                                else:
+                                    print("Ingresar una opcion valida del 1 al 4")
+                                respuesta= input("Desea seguir buscando datos? si/no: ")
+                                if respuesta == "si":
+                                    continue
+                                if respuesta == "no":
+                                    print("Fue un gusto servirle")
+                                    break
+
+            mi_archivo= Archivo("MASCOTAS.csv")
+            mi_archivo.cargar_archivo()
+            #mi_archivo.mostrar_datos("MASCOTAS.csv")
+            mi_archivo.buscar_datos("MASCOTAS.csv")
+                                                     
+
             
 
         elif opcion == 5:
