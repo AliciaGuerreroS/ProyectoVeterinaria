@@ -79,8 +79,6 @@ while True:
 
         if opcion == 1:
             print("Ejecutando Opcion 1")
-            mi_archivo= Archivo("MASCOTAS.csv")
-            mi_archivo.cargar_archivo()
 
         elif opcion == 2:
             print("Ejecutando Opcion 2: MOSTRAR DATOS")
