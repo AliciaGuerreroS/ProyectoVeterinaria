@@ -96,7 +96,31 @@ while True:
 
         elif opcion == 3:
             print("Ejecutando Opcion 3 ")
-            
+            fila= []
+    respuesta = ["si", "no"]
+    while True:
+        nombre= input("Nombre de mascota: ")
+        fecha_nacimiento= input("Fecha de nacimiento, mascota: ")
+        raza = input("Raza: ")
+        nombre_dueño= input("Nombre del dueño: ")
+        dni_dueño= input("DNI del dueño: ")
+        fila.extend([nombre, fecha_nacimiento, raza, nombre_dueño, dni_dueño])
+        print(f"Se han agregado los siguiente datos: {fila}")
+
+
+        guardar= int(input("Quiere guardar los datos ingresados?  Si su respuesta es SI, 6 para SI, 0 para NO: "))
+        if guardar == 6:
+                print("LOS DATOS SE HAN GUARDADO")
+                #Agregar dato:
+                # Pre-requisite - The CSV file should be manually closed before running this code.
+                with open('MASCOTAS.csv', 'a', newline='') as f:
+                    writer_object = writer(f)
+                    writer_object.writerow(fila)
+                    f.close()
+                    break
+        if guardar == 0:
+                print("Gracias por confiar en nosotros")
+                break
 
         elif opcion == 4:
             print("Ejecutando Opcion 4")
