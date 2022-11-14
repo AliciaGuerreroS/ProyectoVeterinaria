@@ -168,6 +168,43 @@ while True:
 
         else:
             print("Ejecutando Opcion 6")
+            class Archivo:
+                def __init__(self, doc) -> None:
+                    self.doc= doc
+                
+                def cargar_archivo(self):
+                    with open("MASCOTAS.csv", encoding= 'utf-8') as f:
+                        self.doc = csv.reader(f)
+                        #print(self.doc)
+                        #print(f"Se cargaron los datos de 5 mascotas")
+
+
+                def mostrar_datos(self, doc):
+                    with open("MASCOTAS.csv", encoding= 'utf-8') as f:
+                        self.doc = csv.reader(f)
+                        #print(self.doc)
+                        for linea in self.doc:
+                            print(linea)
+            ### estas son las lineas para ejecucion
+            mi_archivo= Archivo("MASCOTAS.csv")
+            mi_archivo.cargar_archivo()
+            # mi_archivo.mostrar_datos("MASCOTAS.csv")
+
+            fila= []
+            nombre= input("Nombre de mascota: ")
+            fecha_nacimiento= input("Fecha de nacimiento, mascota: ")
+            raza = input("Raza: ")
+            nombre_dueño= input("Nombre del dueño: ")
+            dni_dueño= input("DNI del dueño: ")
+            fila.extend([nombre, fecha_nacimiento, raza, nombre_dueño, dni_dueño])
+            print(fila)
+
+            #Agregar dato:
+            # Pre-requisite - The CSV file should be manually closed before running this code.
+            with open('MASCOTAS.csv', 'a', newline='') as f:
+                writer_object = writer(f)
+                writer_object.writerow(fila)
+                f.close()
 
         respuesta= input("Necesita realizar alguna otra operación? si/no: ")
         if respuesta == "si":
