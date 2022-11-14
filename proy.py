@@ -96,11 +96,11 @@ while True:
 
         elif opcion == 3:
             print("Ejecutando Opcion 3 ")
-            
+
 
         elif opcion == 4:
             print("Ejecutando Opcion 4")
-            
+
 
         elif opcion == 5:
             print("Ejecutando Opcion 5")
