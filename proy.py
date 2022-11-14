@@ -78,10 +78,12 @@ while True:
 
 
         if opcion == 1:
-            print("Ejecutando Opcion 1")
+            print("Ejecutando opción 1")
+
 
         elif opcion == 2:
             print("Ejecutando Opcion 2: MOSTRAR DATOS")
+
 
 
         elif opcion == 3:
@@ -166,3 +168,4 @@ while True:
         if respuesta == "no":
             print("Estamos para servirle")
             break
+>>>>>>> intento_1
