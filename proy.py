@@ -83,6 +83,14 @@ while True:
 
         elif opcion == 2:
             print("Ejecutando Opcion 2: MOSTRAR DATOS")
+            def mostrar_datos(self, doc):
+                with open("MASCOTAS.csv", encoding= 'utf-8') as f:
+                    self.doc = csv.reader(f)
+                    #print(self.doc)
+                    for linea in self.doc:
+                        print(linea)
+            mi_archivo= Archivo("MASCOTAS.csv")
+            mi_archivo.mostrar_datos("MASCOTAS.csv")
 
 
 
