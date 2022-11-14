@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-# Prueba
-Esto es un repositorio colaborativa para prueba.
-=======
+
 Tarea
 Contexto
 Veterinaria necesita revisar y registrar datos de una mascota
@@ -27,5 +24,4 @@ Se solicita escribir un programa en Python que permita realizar las gestiones de
 
 Nota: mostrar datos de mascota involucra: nombre, edad, raza, dueño y DNI del dueño.
 
->>>>>>> 1fc779fb12a3df8fd6bd13233e59051995b222f2
 
